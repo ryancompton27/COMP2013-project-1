@@ -111,6 +111,7 @@ export default function GroceriesAppContainer ({products}) {
 
             <ProductsContainer 
             products={products} 
+            productQuantity={productQuantity}
             handleAddQuantity={handleAddQuantity}
             handleRemoveQuantity={handleRemoveQuantity}
             handleAddToCart={handleAddToCart}

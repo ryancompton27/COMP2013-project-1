@@ -17,7 +17,6 @@ export default function ProductsContainer({
                 key={product.id}
                 img = {product.image}
                 {...product}
-                productQuantity={product.productQuantity}
                 handleAddQuantity={handleAddQuantity}
                 handleRemoveQuantity={handleRemoveQuantity}
                 handleAddToCart={handleAddToCart}
