@@ -12,9 +12,7 @@ handleRemoveQuantity,
 handleAddToCart,
 }) {
 
-
-    const isFound = productQuantity.find((product) => product.id === id)
-    const currentProductQuantity = isFound ? isFound.productQuantity : 0;
+// product quantity is undefined and I cant for the life of me fix it, it has broken all of the code and I cant figure it out.
 
     return (
         <div className="ProductCard">

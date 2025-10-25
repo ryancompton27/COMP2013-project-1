@@ -14,13 +14,15 @@ export default function GroceriesAppContainer ({products}) {
         }))
     );
 
+    //create the cart array to hold the products
     const [cart, setCart] = useState([])
 
 
-    //add a products quantity 
+    //add to an amount of an item
     const handleAddQuantity = (productId, type) => {
         if (type === "Product") {
             const updateProductQuantity = productQuantity.map((product) => {
+                // if the ids match, increase the quantity by 1
                 if (product.id === productId) {
                     return {...product, productQuantity: product.productQuantity + 1}
                 }
@@ -42,9 +44,11 @@ export default function GroceriesAppContainer ({products}) {
         
     }
 
+    //removes to an amount of an item
     const handleRemoveQuantity = (productId, type) => {
         if (type === "Product") {
             const updateProductQuantity = productQuantity.map((product) => {
+                //same but removes one to quantity
                 if (product.id === productId && product.productQuantity > 1) {
                     return {...product, productQuantity: product.productQuantity - 1}
                 }
@@ -73,9 +77,10 @@ export default function GroceriesAppContainer ({products}) {
             alert("Cannot add 0 items to cart, please increase their quantity before adding them");
             return;
         }
+        //makes sure the item isnt in the cart and adds the 
         if (!productInCart) {
             setCart((previousCart) => {
-                return [...previousCart, {...currentProduct, productPrice: currentProduct.price, productQuantity: currentProduct.productQuantity}]
+                return [...previousCart, {...currentProduct}]
             })
         }
         else {
